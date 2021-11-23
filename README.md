@@ -7,6 +7,7 @@ Roadmap to study tee.
 
 - Rust
 - SGX
+- cmake, makefile, xargo
 
 
 ### SGX roadmap

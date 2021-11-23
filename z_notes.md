@@ -62,8 +62,8 @@ One example of SGX used in security was a demo application from wolfSSL[10] usin
 Intel Goldmont Plus (Gemini Lake) microarchitecture also contains support for Intel SGX.[11]
 
 
-
 todo: 
+ cmake, make
  程序员的修养(so库)
  操作系统
  Intel architectrue

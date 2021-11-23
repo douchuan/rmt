@@ -2,7 +2,7 @@
 全景式的文档，包括计算机体系结构(booting, Cache, Address translation, privilege level switching)，
 Security Background，TEE相关的产品(TPM, TT, SGX...)，SGX programming model...
 
-
+本文技术细节过于详细，显得琐碎，甚至某些部分的内容官方文档没提，应该通过reverse or 猜测。
 
 
 使用场景：
