@@ -43,7 +43,6 @@ Basic Input/Output System (BIOS) is the predecessor of UEFI- based firmware. Mos
 
 有必要研究一下 BIOS 和 UEFI
 
-
 [SGX wiki](https://en.wikipedia.org/wiki/Software_Guard_Extensions)
 
 Intel Software Guard Extensions (SGX) is a set of security-related instruction codes that are built into some modern Intel central processing units (CPUs). They allow user-level as well as operating system code to define private regions of memory, called enclaves, whose contents are protected and unable to be either read or saved by any process outside the enclave itself, including processes running at higher privilege levels.[1][2]

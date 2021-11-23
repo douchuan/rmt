@@ -1,4 +1,10 @@
 
+全景式的文档，包括计算机体系结构(booting, Cache, Address translation, privilege level switching)，
+Security Background，TEE相关的产品(TPM, TT, SGX...)，SGX programming model...
+
+
+
+
 使用场景：
 
 For example, a cloud service that performs image pro- cessing on confidential medical images could be imple- mented by having users upload encrypted images. The users would send the encryption keys to software running inside an enclave. The enclave would contain the code for decrypting images, the image processing algorithm, and the code for encrypting the results. The code that receives the uploaded encrypted images and stores them would be left outside the enclave.
