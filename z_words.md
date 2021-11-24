@@ -52,3 +52,6 @@ IA: Intel Architecture
 
 SGX’s isolation mechanisms are intended to protect the confidentiality(机密性) and integrity of the computation performed inside an enclave from attacks coming from malicious(
 恶意的，有敌意的; ) software executing on the same computer,
+
+
+confidential computing technology

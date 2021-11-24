@@ -3,6 +3,21 @@
 
 Roadmap to study tee.
 
+
+### prepare
+
+- 密码学
+- 操作系统
+
+
+### SGX roadmap
+
+- [SGX docs](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html)
+- [SGX从入门到放弃](https://github.com/dingelish/SGXfail)
+- RTFC [linux sgx](https://github.com/intel/linux-sgx)
+- Intel’s Software Developer Manual 3
+
+
 ### Apache Teaclave
 
 - Rust
@@ -10,15 +25,9 @@ Roadmap to study tee.
 - cmake, makefile, xargo
 
 
-### SGX roadmap
-
-- 密码学
-- Intel’s Software Developer Manual 3
-- 操作系统
-
-
 ### 密码学
 
 - 图解密码学, 结城浩
 - 应用密码学：协议、算法与C源程序, Bruce Schneier
 - 初等数论及其应用, Kenneth H．Rosen
+

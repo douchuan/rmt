@@ -1,3 +1,12 @@
+edl
+PSW
+codes of localattestation, remoteattestation
+how run ?
+Intel official docs of SGX
+linux-sgx-sdk codes of localattestation, remoteattestation
+supported compiler?
+
+
 Secure remote computation (Figure 1) is the problem of executing software on a remote computer owned and maintained by an untrusted party, with some integrity and confidentiality guarantees. In the general setting, secure remote computation is an unsolved problem. Fully Homomorphic Encryption [61] solves the problem for a limited family of computations, but has an impractical performance overhead [140].
 
 todo: 进一步看看, Fully Homomorphic Encryption
@@ -60,6 +69,26 @@ Emulation of SGX was added to an experimental version of the QEMU system emulato
 One example of SGX used in security was a demo application from wolfSSL[10] using it for cryptography algorithms.
 
 Intel Goldmont Plus (Gemini Lake) microarchitecture also contains support for Intel SGX.[11]
+
+SGX 应用领域：
+  DRM
+
+[百万富翁问题](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem)
+
+
+阅读sgx_tstd，研究println！实现，体会Partition, partition, partition
+
+```
+ 32 enclave {
+ 33     from "sgx_tstd.edl" import *;
+ 34     from "sgx_stdio.edl" import *;
+ 35     from "sgx_backtrace.edl" import *;
+ 36     from "sgx_tstdc.edl" import *;
+```
+
+sgx_tstd.edl 找来读一下
+
+edl编译用OCaml实现，用OCaml实现编译器很容易吗？
 
 
 todo: 

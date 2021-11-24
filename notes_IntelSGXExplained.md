@@ -1,5 +1,6 @@
 Intel SGX Explained
 
+读这篇论文，需要精通：计算机组成原理，操作系统（虚拟内存），密码学，Intel SGX官方相关资料
 
 全景式的文档，包括计算机体系结构(booting, Cache, Address translation, privilege level switching)，
 Security Background，TEE相关的产品(TPM, TT, SGX...)，SGX programming model...
