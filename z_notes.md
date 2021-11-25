@@ -90,6 +90,7 @@ sgx_tstd.edl 找来读一下
 
 edl编译用OCaml实现，用OCaml实现编译器很容易吗？
 
+build.rs 系统学习
 
 todo: 
  cmake, make
@@ -100,6 +101,11 @@ todo:
  malloc 实现算法 
  [mimalloc](https://github.com/microsoft/mimalloc)
 
+
+sgx todo:
+  改变SGX文档过于零碎的问题，降低学习者的时间成本
+  提供更清晰的阶段性的课程和代码实例： class-1, class-2...方便循序渐进的学习
+  local & remote attestation
 
 
 

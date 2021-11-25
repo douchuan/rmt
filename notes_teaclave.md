@@ -11,6 +11,10 @@ teaclave编译用xargo，不是通过cargo（cargo过于上层,无法控制编�
 - 完善的模拟器支持
 - 各种宣传，举办各种比赛
 
+把零散的文档集中化，降低学习成本和付出的找资料的时间：通过Intel SGX文档和linux-sgx代码，来学习SGX原理和开发，能否做到从teaclave官网就直接学会。
+
+剖析local attestation, remote attestation demos，并形成文档。
+
 ### cmake
 
 项目用cmake组织，example用makefile组织

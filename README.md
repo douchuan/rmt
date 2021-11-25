@@ -12,6 +12,8 @@ Roadmap to study tee.
 
 ### SGX roadmap
 
+要学习SGX最容易的途径是通过官网
+
 - [SGX docs](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html)
 - [SGX从入门到放弃](https://github.com/dingelish/SGXfail)
 - RTFC [linux sgx](https://github.com/intel/linux-sgx)

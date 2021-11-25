@@ -22,9 +22,12 @@ Edge Routines – functions that may run outside the enclave (untrusted edge rou
 
 3rd Party Libraries – for the purpose of this document,this is any library that has been tailored to work inside the Intel SGX enclave environment.
 
+### Signature
 
 Enclave Measurement: A single 256-bit hash that identifies the code and initial data to be placed inside the enclave, the expected order and position in which they are to be placed, and security properties of those pages. A change in any of these variables will result in 
 a different measurement.When the enclave code/data pages are placed inside the EPC, the CPU calculates the enclave measurement and sotres this value in the MRENCLAVE register.
+
+todo:
 
 Local Attestation Example中，A和B，如何相互发现？communication path是一个PIPE，还是socket？
 
@@ -32,6 +35,39 @@ The application B retrieves the MRENCLAVE value from the enclave certificate for
 系统提供的机制吗？还是需要每个Enclave独自实现？
 
 The SDK includes a tool for signing enclaves, called sgx_sign
+
+ISVSVN
+
+The Security Version Number of the Enclave (ISVSVN) – The enclave author assigns a Security Version Number (SVN) to each version of an enclave. The SVN reflects the level of the security property of the enclave, and should monotonically increase with improvements of the security property. After an enclave is successfully initialized, the CPU records the SVN, which can be used during attestation. Different ver- sions of an enclave with the same security property should be assigned with the same SVN. For example, a new version of an enclave with non- security-related bug fixes should have the same SVN as the older ver- sion.
+
+一个enclave有两个版本号，一个自身普通意义的版本号，用于bug修复，新功能添加。另一个是SVN，安全版本号，
+用于修复安全性的bug，或不同安全级别的enclave
+
+The SDK includes a tool for signing enclaves, called sgx_sign, that takes an enclave file and adds the enclave signature structure as required by the Intel® SGX architecture. This tool supports single-step test signing using a test signing private key configured on the local system, and two-step release signing that involves a signing facility/platform, where the release signing private key is protected. sgx_sign can also generate allowlisting materials from a signed enclave file.
+
+sgx_sign对enclave.so签名，把消息放在so的哪一部分？
+
+dev环境single-step, release two-step
+
+Enclave signaure有三个重点的变量：Signature Structure, MRENCLAVE, MRSINGER
+
+
+### Local Attestation
+
+
+The signing process involved in attestation takes place in such a manner that the relying party can be assured that it is communicating with a real hardware enclave and not some software emulation.
+
+The authentication mechanism used for intra-platform enclave attestation uses
+a symmetric key system where only the enclave verifying the report structure
+and the enclave harware creating the report know the key, which is embedded in the
+hardware platform.
+
+emulation无法做attestation，因为生成report需要一个key，这个key只有hardware有。
+
+在Local Attestation中，A和B都把report提交给hardware做验证，这样hardware相当于第三方权威机构。
+
+
+### Remote (Inter-Platform) Attestation
 
 
 
@@ -95,7 +131,7 @@ enclave {
 }; 
 ```
 
-Data Sealing
+### Data Sealing
 
 Enclaves are essentially stateless: they are destroyed when the system goes to sleep, when the application exits, and of course when the application explicitly destroys them. When an enclave is destroyed, all of its contents are lost.
 
