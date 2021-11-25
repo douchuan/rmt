@@ -34,6 +34,26 @@ sgx_ucrypto, sgx_tcrypto 区别
 u: untrust
 t: trust
 
+### hello-rust
+
+```make
+$(Signed_RustEnclave_Name): $(RustEnclave_Name)
+	mkdir -p bin
+	@$(SGX_ENCLAVE_SIGNER) sign -key enclave/Enclave_private.pem -enclave $(RustEnclave_Name) -out $@ -config enclave/Enclave.config.xml
+	@echo "SIGN =>  $@"
+```
+等价于
+
+```shell
+sgx_sign sign -key enclave/Enclave_private.pem -enclave enclave/enclave.so -out bin/enclave.signed.so -config enclave/Enclave.config.xml
+```
+
+对so签名, 用到三个文件 Enclave_private.pem, enclave.so, Enclave.config.xml
+
+
+
+
+
 ### teaclave-sgx-sdk, localattestation
 
 ### teaclave-sgx-sdk, remoteattestation

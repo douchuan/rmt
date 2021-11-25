@@ -86,3 +86,12 @@ root@docker:~/sgx/samplecode/hello-rust# SGX_MODE=SW make
 
 todo: 读sgx_tstd代码
 
+
+### porting
+
+todo: study rust TLS stack rustls/webpki/ring
+
+不可信输入：std::{fs,path,env,net,time}
+
+todo：还有那些是不可信的？判别标准？
+todo: xargo ?
