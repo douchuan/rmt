@@ -57,6 +57,10 @@ todo: edl
 
 ### http-req
 
+### protobuf
+
+### prost-protobuf
+
 ### teaclave-sgx-sdk, localattestation
 
 ### teaclave-sgx-sdk, remoteattestation
@@ -87,3 +91,17 @@ todo: ffi
 
 todo: rustc
 
+
+### println!
+
+- sgx_tstd/src/macros.rs: println!
+- sgx_tstd/src/io/stdio.rs: _print, pub fn stdout()
+- sgx_tstd/src/sys/stdio.rs: Stdout
+- sgx_tstd/src/sys/fd.rs: FileDesc
+- sgx_libc/src/linux/x86_64/ocall.rs, write (与ocall的分界线)
+
+more deep
+
+- sgx_tstd/src/io/lazy.rs, LazyStatic, SgxThreadMutex, SgxReentrantMutex
+
+### panic!
