@@ -6,10 +6,8 @@ teaclave编译用xargo，不是通过cargo（cargo过于上层,无法控制编�
 - 2-3 本SGX的专业书籍，覆盖入门->中级->高级（底层实现原理，类似Intel SGX Explained这样的论文）
 - 大量文章，像Rust社区所做的，针对各种库写的各种book
 - API文档
-- 顺滑的开发环境，IntellJ plugin for SGX (创建项目，编译，运行)
+- IDE? IntellJ plugin for SGX (创建项目，编译，运行)
 - support dev in Windows & Mac & Linux (各种发行版)
-- 完善的模拟器支持
-- 各种宣传，举办各种比赛
 
 把零散的文档集中化，降低学习成本和付出的找资料的时间：通过Intel SGX文档和linux-sgx代码，来学习SGX原理和开发，能否做到从teaclave官网就直接学会。
 
@@ -63,6 +61,8 @@ todo: edl
 
 ### teaclave-sgx-sdk, localattestation
 
+
+
 ### teaclave-sgx-sdk, remoteattestation
 
 
@@ -83,16 +83,8 @@ cargo:rustc-link-search=native=/opt/sgxsdk/lib64
 cargo:rustc-link-lib=dylib=sgx_urts_sim
 ```
 
-### [ffi](https://doc.rust-lang.org/nomicon/ffi.html)
 
-todo: ffi
-
-### [rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)
-
-todo: rustc
-
-
-### println!
+### sgx_tstd, println!
 
 - sgx_tstd/src/macros.rs: println!
 - sgx_tstd/src/io/stdio.rs: _print, pub fn stdout()
@@ -100,8 +92,39 @@ todo: rustc
 - sgx_tstd/src/sys/fd.rs: FileDesc
 - sgx_libc/src/linux/x86_64/ocall.rs, write (与ocall的分界线)
 
-more deep
+todo: more about supporting concepts
 
 - sgx_tstd/src/io/lazy.rs, LazyStatic, SgxThreadMutex, SgxReentrantMutex
 
-### panic!
+### sgx_tstd, panic!
+
+### sgx_trts
+
+Trusted Runtime System
+
+The Intel(R) SGX trusted runtime system (tRTS) is a key component of the Intel(R) 
+Software Guard Extensions SDK.
+
+It provides the enclave entry point logic as well as other functions to be used 
+by enclave developers.
+
+ascii.rs, cpu_feature.rs, enclave.rs, macros.rs, memeq.rs, trts.rs, 
+c_str.rs, cpuid.rs, memchr.rs, oom.rs, veh.rs
+
+- cpuid.rs, As the CPUID instruction is executed by an OCALL, the results should not be trusted. Code should verify the results and perform a threat evaluation to determine the impact on trusted code if the results were spoofed.
+- enclave.rs: global_data_t, thread_data_t, SgxGlobalData, SgxThreadData, SgxThreadPolicy 
+- memeq.rs: Comparing buffer contents in constant time
+- trts.rs: rsgx_read_rand, rsgx_read_rand function is used to generate a random number inside the enclave
+- trts.rs: rsgx_data_is_within_enclave, ...
+- veh.rs: register/unregister exception handler
+
+### untrusted: fs, path, time
+
+
+### [ffi](https://doc.rust-lang.org/nomicon/ffi.html)
+
+todo: ffi
+
+### [rustc](https://doc.rust-lang.org/rustc/what-is-rustc.html)
+
+todo: rustc
